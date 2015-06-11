@@ -1,8 +1,9 @@
 #pragma once
 #include "stdafx.h"
 #include "player.h"
+#include "projectile.h"
 #include "SFML/Graphics.hpp"
-class game: public player 
+class game: public player, public projectile
 {
 public:
 	game();
