@@ -12,8 +12,10 @@ public:
 	sf::Texture PROJECTILETEXTURE;
 	std::vector<sf::Sprite>::iterator PROJECTILELOCATION;
 	void FaddProjectile();
-	float PROJECTILESPEEDX, PROJECTILESPEEDY;
+	float PROJECTILESPEED;
 	void FsetTexture();
+	void FmoveToLocation(float x, float y);
+	void FsetAngle(float x, float y);
 	float ANGLE;
 };
 

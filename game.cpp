@@ -102,3 +102,11 @@ void game::FdrawCharacter()
 {
 	this->GAMESCREEN.draw(player::PLAYER);
 }
+void game::FdrawProjectile()
+{
+	for (this->PROJECTILELOCATION = this->PROJECTILELIST.begin(); this->PROJECTILELOCATION != this->PROJECTILELIST.end(); this->PROJECTILELOCATION++)
+	{
+		this->GAMESCREEN.draw(*this->PROJECTILELOCATION);
+
+	}
+}

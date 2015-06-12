@@ -29,5 +29,6 @@ public:
 	void FsetSingelVolume();
 	void FdrawCharacter();
 	void FClear();
+	void FdrawProjectile();
 };
 

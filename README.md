@@ -1,5 +1,21 @@
 # GameEngine
-Game Engine V 0.01
+# Name: RadTech Engine
+# Author: Bryce Moral 
+# Company: RadLab Gaming
+# Date: 06-11-2015
+#Version: 0.01
+
+Started Modules:
 
 
-This is a 2D game engine built of the SFML library and extended into a full 2D game engine.
+Game:
+	-- Need to fill in data
+Player:
+	-- Need to fill in data
+Projectile:
+	-- Need to fill in data
+Textures:
+	-- Need to fill in data
+Network:
+	-- Need to fill in data
+
