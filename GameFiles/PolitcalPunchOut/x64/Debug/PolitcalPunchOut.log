@@ -1,0 +1,19 @@
+﻿Build started 6/12/2015 3:59:38 AM.
+     1>Project "C:\Users\Bryce\documents\visual studio 2013\Projects\PolitcalPunchOut\PolitcalPunchOut\PolitcalPunchOut.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I"C:\SFML-2.3\include" /Zi /nologo /W3 /WX- /sdl /Od /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"x64\Debug\PolitcalPunchOut.pch" /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt projectile.cpp
+         projectile.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Bryce\documents\visual studio 2013\Projects\PolitcalPunchOut\x64\Debug\PolitcalPunchOut.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\SFML-2.3\lib" "sfml-graphics-d.lib" "sfml-window-d.lib" "sfml-system-d.lib" "sfml-audio-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Bryce\documents\visual studio 2013\Projects\PolitcalPunchOut\x64\Debug\PolitcalPunchOut.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Bryce\documents\visual studio 2013\Projects\PolitcalPunchOut\x64\Debug\PolitcalPunchOut.lib" /MACHINE:X64 x64\Debug\game.obj
+         x64\Debug\network.obj
+         x64\Debug\player.obj
+         x64\Debug\PolitcalPunchOut.obj
+         x64\Debug\projectile.obj
+         x64\Debug\stdafx.obj
+         x64\Debug\textures.obj
+         PolitcalPunchOut.vcxproj -> C:\Users\Bryce\documents\visual studio 2013\Projects\PolitcalPunchOut\x64\Debug\PolitcalPunchOut.exe
+     1>Done Building Project "C:\Users\Bryce\documents\visual studio 2013\Projects\PolitcalPunchOut\PolitcalPunchOut\PolitcalPunchOut.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.79
