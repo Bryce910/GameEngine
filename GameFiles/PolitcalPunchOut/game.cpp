@@ -3,6 +3,8 @@
 #include "player.h"
 #include "SFML/Graphics.hpp"
 #include <iostream>
+#include <windows.h>
+
 game::game()
 {
 	this->FsetGameState("splash");
@@ -24,6 +26,14 @@ void game::FsetGameSize(unsigned int sizeX, unsigned int sizeY)
 {
 	this->GAMESIZEX = sizeX;
 	this->GAMESIZEY = sizeY;
+}
+void game::FhideTerminal()
+{
+	ShowWindow(GetConsoleWindow(), SW_HIDE);
+}
+void game::FsetIcon(int x, int y, sf::Image &icon)
+{
+	this->GAMESCREEN.setIcon(x, y, icon.getPixelsPtr());
 }
 void game::FloadWindow()
 {
@@ -109,4 +119,8 @@ void game::FdrawProjectile()
 		this->GAMESCREEN.draw(*this->PROJECTILELOCATION);
 
 	}
+}
+void game::FdrawMenu()
+{
+	this->GAMESCREEN.draw(menu::LOADINGBAR);
 }

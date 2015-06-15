@@ -2,8 +2,9 @@
 #include "stdafx.h"
 #include "player.h"
 #include "projectile.h"
+#include "menu.h"
 #include "SFML/Graphics.hpp"
-class game: public player, public projectile
+class game: public player, public projectile, public menu
 {
 public:
 	game();
@@ -25,10 +26,13 @@ public:
 	void FcheckEventState();
 	void FsetGameState(std::string state);
 	void FDisplaySplash(sf::Texture splashDisplay, std::string location);
+	void FsetIcon(int x, int y,sf::Image &icon);
 	void FsetOverallVolume();
 	void FsetSingelVolume();
 	void FdrawCharacter();
 	void FClear();
 	void FdrawProjectile();
+	void FdrawMenu();
+	void FhideTerminal();
 };
 
