@@ -1,21 +1,20 @@
-# GameEngine
+
 # Name: RadTech Engine
 # Author: Bryce Moral 
 # Company: RadLab Gaming
 # Date: 06-11-2015
 #Version: 0.01
+#Language: C++
 
-Started Modules:
 
-
-Game:
+#Game:
 	-- Need to fill in data
-Player:
+#Player:
 	-- Need to fill in data
-Projectile:
+#Projectile:
 	-- Need to fill in data
-Textures:
+#Textures:
 	-- Need to fill in data
-Network:
+#Network:
 	-- Need to fill in data
 

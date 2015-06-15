@@ -12,8 +12,10 @@ public:
 	enum PlayerAction {walk, run, idle, jump};
 	enum PlayerMovement PLAYERDIRECTION;
 	enum PlayerAction PLAYERACTION;
-	float XSPEED, YSPEED;
+	float XSPEED, YSPEED, HEALTH;
 	void FgetMovement();
 	void FmovePlayer();
+	void FgetHealth();
+	void FsetHealth();
 };
 

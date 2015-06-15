@@ -152,8 +152,14 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="chat.h" />
     <ClInclude Include="game.h" />
+    <ClInclude Include="inventory.h" />
+    <ClInclude Include="item.h" />
+    <ClInclude Include="lighting.h" />
     <ClInclude Include="network.h" />
+    <ClInclude Include="objects.h" />
+    <ClInclude Include="physic.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="projectile.h" />
     <ClInclude Include="stdafx.h" />
@@ -161,11 +167,18 @@
     <ClInclude Include="textures.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="chat.cpp" />
     <ClCompile Include="game.cpp" />
+    <ClCompile Include="inventory.cpp" />
+    <ClCompile Include="item.cpp" />
+    <ClCompile Include="lighting.cpp" />
     <ClCompile Include="network.cpp" />
+    <ClCompile Include="objects.cpp" />
+    <ClCompile Include="physic.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="PolitcalPunchOut.cpp" />
     <ClCompile Include="projectile.cpp" />
+    <ClCompile Include="Source.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
