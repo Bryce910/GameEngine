@@ -1,23 +1,16 @@
-c:\users\bryce\documents\visual studio 2013\projects\politcalpunchout\politcalpunchout\x64\debug\vc120.pdb
-c:\users\bryce\documents\github\radtech-engine\gamefiles\politcalpunchout\x64\debug\politcalpunchout.pch
-c:\users\bryce\documents\github\radtech-engine\gamefiles\politcalpunchout\x64\debug\vc120.pdb
-c:\users\bryce\documents\github\radtech-engine\gamefiles\politcalpunchout\x64\debug\vc120.idb
-c:\users\bryce\documents\github\radtech-engine\gamefiles\politcalpunchout\x64\debug\stdafx.obj
-c:\users\bryce\documents\github\radtech-engine\gamefiles\politcalpunchout\x64\debug\game.obj
-c:\users\bryce\documents\github\radtech-engine\gamefiles\politcalpunchout\x64\debug\network.obj
-c:\users\bryce\documents\github\radtech-engine\gamefiles\politcalpunchout\x64\debug\player.obj
-c:\users\bryce\documents\github\radtech-engine\gamefiles\politcalpunchout\x64\debug\politcalpunchout.obj
-c:\users\bryce\documents\github\radtech-engine\gamefiles\politcalpunchout\x64\debug\projectile.obj
-c:\users\bryce\documents\github\radtech-engine\gamefiles\politcalpunchout\x64\debug\textures.obj
-c:\users\bryce\documents\visual studio 2013\projects\politcalpunchout\x64\debug\politcalpunchout.ilk
-c:\users\bryce\documents\visual studio 2013\projects\politcalpunchout\x64\debug\politcalpunchout.exe
-c:\users\bryce\documents\visual studio 2013\projects\politcalpunchout\x64\debug\politcalpunchout.pdb
-c:\users\bryce\documents\github\radtech-engine\gamefiles\x64\debug\politcalpunchout.ilk
-c:\users\bryce\documents\github\radtech-engine\gamefiles\x64\debug\politcalpunchout.exe
-c:\users\bryce\documents\github\radtech-engine\gamefiles\x64\debug\politcalpunchout.pdb
-c:\users\bryce\documents\github\radtech-engine\gamefiles\politcalpunchout\x64\debug\politcalpunchout.tlog\cl.command.1.tlog
-c:\users\bryce\documents\github\radtech-engine\gamefiles\politcalpunchout\x64\debug\politcalpunchout.tlog\cl.read.1.tlog
-c:\users\bryce\documents\github\radtech-engine\gamefiles\politcalpunchout\x64\debug\politcalpunchout.tlog\cl.write.1.tlog
-c:\users\bryce\documents\github\radtech-engine\gamefiles\politcalpunchout\x64\debug\politcalpunchout.tlog\link.command.1.tlog
-c:\users\bryce\documents\github\radtech-engine\gamefiles\politcalpunchout\x64\debug\politcalpunchout.tlog\link.read.1.tlog
-c:\users\bryce\documents\github\radtech-engine\gamefiles\politcalpunchout\x64\debug\politcalpunchout.tlog\link.write.1.tlog
+c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\x64\debug\politcalpunchout.pch
+c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\x64\debug\vc120.pdb
+c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\x64\debug\vc120.idb
+c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\x64\debug\stdafx.obj
+c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\x64\debug\chat.obj
+c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\x64\debug\inventory.obj
+c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\x64\debug\item.obj
+c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\x64\debug\lighting.obj
+c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\x64\debug\network.obj
+c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\x64\debug\objects.obj
+c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\x64\debug\physic.obj
+c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\x64\debug\projectile.obj
+c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\x64\debug\textures.obj
+c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\x64\debug\politcalpunchout.tlog\cl.command.1.tlog
+c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\x64\debug\politcalpunchout.tlog\cl.read.1.tlog
+c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\x64\debug\politcalpunchout.tlog\cl.write.1.tlog

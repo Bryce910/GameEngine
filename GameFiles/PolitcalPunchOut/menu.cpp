@@ -1,6 +1,5 @@
 #include "stdafx.h"
-#include "menu.h"
-#include "SFML/Graphics.hpp"
+#include "linker.h"
 
 menu::menu()
 {
@@ -30,6 +29,7 @@ void menu::FanimationBar()
 		if (this->DIRECTION == "right")
 		{
 			this->LOADINGBAR.setTextureRect(sf::IntRect(this->FRAMECOUNT * this->FRAME.x, 0, FRAME.x, FRAME.y));
+			
 		}
 		else if (this->DIRECTION == "down")
 		{
@@ -43,40 +43,83 @@ void menu::FanimationBar()
 }
 void menu::FmainMenu()
 {
-
+	std::vector<std::string>::iterator menuContainter = MENUITEMCONTAINERLIST.begin();
+	for (std::vector<sf::Sprite>::iterator menuItem = MENUITEMLIST.begin(); menuItem != MENUITEMLIST.end(); menuItem++)
+	{
+		if (*menuContainter == "main menu")
+		{
+			this->game::GAMESCREEN.draw(*menuItem);
+		}
+		menuContainter++;
+	}
 }
 void menu::FpauseMenu()
 {
-
+	std::vector<std::string>::iterator menuContainter = MENUITEMCONTAINERLIST.begin();
+	for (std::vector<sf::Sprite>::iterator menuItem = MENUITEMLIST.begin(); menuItem != MENUITEMLIST.end(); menuItem++)
+	{
+		if (*menuContainter == "pause menu")
+		{
+			this->GAMESCREEN.draw(*menuItem);
+		}
+		menuContainter++;
+	}
 }
 void menu::FstartMenu()
 {
-
+	std::vector<std::string>::iterator menuContainter = MENUITEMCONTAINERLIST.begin();
+	for (std::vector<sf::Sprite>::iterator menuItem = MENUITEMLIST.begin(); menuItem != MENUITEMLIST.end(); menuItem++)
+	{
+		if (*menuContainter == "start menu")
+		{
+			this->GAMESCREEN.draw(*menuItem);
+		}
+		menuContainter++;
+	}
 }
 void menu::FwinMenu()
 {
-
+	std::vector<std::string>::iterator menuContainter = MENUITEMCONTAINERLIST.begin();
+	for (std::vector<sf::Sprite>::iterator menuItem = MENUITEMLIST.begin(); menuItem != MENUITEMLIST.end(); menuItem++)
+	{
+		if (*menuContainter == "win menu")
+		{
+			this->GAMESCREEN.draw(*menuItem);
+		}
+		menuContainter++;
+	}
 }
 void menu::FloseMenu()
 {
-
+	std::vector<std::string>::iterator menuContainter = MENUITEMCONTAINERLIST.begin();
+	for (std::vector<sf::Sprite>::iterator menuItem = MENUITEMLIST.begin(); menuItem != MENUITEMLIST.end(); menuItem++)
+	{
+		if (*menuContainter == "close menu")
+		{
+			this->GAMESCREEN.draw(*menuItem);
+		}
+		menuContainter++;
+	}
 }
-void menu::FaddMenuItem(sf::Texture &texture, float locationX, float locationY, std::string simpleLocation)
+void menu::FaddMenuItem(sf::Texture &texture, float locationX, float locationY, std::string simpleLocation, std::string menuType)
 {
 	this->MENUITEM.setTexture(texture);
 	this->MENUITEMLOCATION.x = locationX;
 	this->MENUITEMLOCATION.y = locationY;
+	this->MENUITEMSIZE.x = this->MENUITEM.getGlobalBounds().width;
+	this->MENUITEMSIZE.y = this->MENUITEM.getGlobalBounds().height;
+
 	if (simpleLocation != "")
 	{
 		this->MENUITEM.setPosition(MENUITEMLOCATION.x, MENUITEMLOCATION.y);
 	}
 	else if (simpleLocation == "Bottom Left")
 	{
-		this->MENUITEM.setPosition(0, this->GAMESIZEY - this->MENUITEM.getGlobalBounds().height);
+		this->MENUITEM.setPosition(0, this->GAMESIZEY - this->MENUITEMSIZE.y);
 	}
 	else if (simpleLocation == "Middle Left")
 	{
-		this->MENUITEM.setPosition(0, this->GAMESIZEY - (this->MENUITEM.getGlobalBounds().height / 2) / 2);
+		this->MENUITEM.setPosition(0, this->GAMESIZEY - (this->MENUITEMSIZE.y / 2) / 2);
 	}
 	else if (simpleLocation == "Top Left")
 	{
@@ -84,29 +127,28 @@ void menu::FaddMenuItem(sf::Texture &texture, float locationX, float locationY, 
 	}
 	else if (simpleLocation == "Top Right")
 	{
-
+		this->MENUITEM.setPosition(this->GAMESIZEX - (this->MENUITEMSIZE.x), 0);
 	}
 	else if (simpleLocation == "Middle Right")
 	{
-
+		this->MENUITEM.setPosition(this->GAMESIZEX - (this->MENUITEMSIZE.x), this->GAMESIZEY - (this->MENUITEMSIZE.y / 2) / 2);
 	}
 	else if (simpleLocation == "Bottom Right")
 	{
-
+		this->MENUITEM.setPosition(this->GAMESIZEX - (this->MENUITEMSIZE.x), this->GAMESIZEY - (this->MENUITEMSIZE.y) );
 	}
 	else if (simpleLocation == "Center Top")
 	{
-
+		this->MENUITEM.setPosition(this->GAMESIZEX - (this->MENUITEMSIZE.y / 2) / 2, 0);
 	}
 	else if (simpleLocation == "Center Middle")
 	{
-
+		this->MENUITEM.setPosition(this->GAMESIZEX - (this->MENUITEMSIZE.x / 2) / 2, this->GAMESIZEY - (this->MENUITEMSIZE.y / 2) / 2);
 	}
 	else if (simpleLocation == "Center Bottom")
 	{
-
+		this->MENUITEM.setPosition(this->GAMESIZEX - (this->MENUITEMSIZE.x / 2) / 2, this->GAMESIZEY - (this->MENUITEMSIZE.y));
 	}
-	this->MENUITEM.setPosition(MENUITEMLOCATION.x, MENUITEMLOCATION.y);
 	this->MENUITEMLIST.push_back(this->MENUITEM);
-
+	this->MENUITEMCONTAINERLIST.push_back(menuType);
 }

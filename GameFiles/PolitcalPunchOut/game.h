@@ -1,17 +1,15 @@
-#pragma once
 #include "stdafx.h"
-#include "player.h"
-#include "projectile.h"
-#include "menu.h"
-#include "SFML/Graphics.hpp"
-class game: public player, public projectile, public menu
+#include "linker.h"
+class game
 {
 public:
 	game();
 	~game();
 	
-	enum EGameState {splash, loading, paused, menu, play, lose, win, close};
-	enum EGameState GAMESTATE;
+	std::vector<std::string> GAMESTATELIST;
+	std::string GAMESTATE;
+	enum EGameType { standard, sidescroller, verticalscroller, platformer, shootemup};
+	enum EGameState GAMETYPE;
 	int MAXFRAMERATE;
 	std::string GAMETITLE;
 	int FsetFrameRate(int maxframerate);
@@ -29,10 +27,11 @@ public:
 	void FsetIcon(int x, int y,sf::Image &icon);
 	void FsetOverallVolume();
 	void FsetSingelVolume();
-	void FdrawCharacter();
+	
 	void FClear();
-	void FdrawProjectile();
-	void FdrawMenu();
+
 	void FhideTerminal();
+	void FaddGameState(std::string state);
+	void Fdraw();
 };
 

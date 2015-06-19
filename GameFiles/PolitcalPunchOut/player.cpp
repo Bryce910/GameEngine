@@ -1,9 +1,9 @@
 #include "stdafx.h"
-#include "player.h"
-
+#include "linker.h"
 
 player::player()
 {
+	this->FgetCenter();
 }
 
 player::~player()
@@ -36,4 +36,15 @@ void player::FgetMovement()
 void player::FmovePlayer()
 {
 	this->PLAYER.move(XSPEED, YSPEED);
+}
+void player::FgetCenter()
+{
+	/* Set center of player for rotation and etc. */
+	this->PLAYERCENTER.x = this->PLAYER.getGlobalBounds().left / 2;
+	this->PLAYERCENTER.y = this->PLAYER.getGlobalBounds().top / 2;
+	this->PLAYER.setOrigin(this->PLAYERCENTER.x, this->PLAYERCENTER.y);
+}
+void player::FgetAngle()
+{
+	this->ANGLE = this->PLAYER.getRotation();
 }

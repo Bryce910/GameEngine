@@ -153,10 +153,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="chat.h" />
+    <ClInclude Include="draw.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="inventory.h" />
     <ClInclude Include="item.h" />
     <ClInclude Include="lighting.h" />
+    <ClInclude Include="linker.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="network.h" />
     <ClInclude Include="objects.h" />
@@ -169,6 +171,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="chat.cpp" />
+    <ClCompile Include="draw.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="inventory.cpp" />
     <ClCompile Include="item.cpp" />

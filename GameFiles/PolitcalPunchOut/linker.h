@@ -1,0 +1,11 @@
+#pragma once
+#include "stdafx.h"
+#include <iostream>
+#include "SFML/Graphics.hpp"
+#include <windows.h>
+#include <vector>
+#include "game.h"
+#include "menu.h"
+#include "player.h"
+#include "projectile.h"
+#include "draw.h"

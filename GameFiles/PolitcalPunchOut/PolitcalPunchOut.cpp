@@ -1,10 +1,7 @@
 // PolitcalPunchOut.cpp : Defines the entry point for the console application.
 //
-
 #include "stdafx.h"
-#include "SFML/Graphics.hpp"
-#include "game.h"
-#include "player.h"
+#include "linker.h"
 
 int main()
 {
@@ -17,25 +14,25 @@ int main()
 	sf::Texture t;
 	player Character;
 	projectile Projectile;
-	while(PolitalPunchout.GAMESTATE != game::EGameState::close)
+	while (PolitalPunchout.GAMESTATE != "close")
 	{
 		PolitalPunchout.FcheckEventState();
 		PolitalPunchout.FClear();
-		if (PolitalPunchout.GAMESTATE == game::EGameState::splash)
+		if (PolitalPunchout.GAMESTATE == "splash")
 		{
 			PolitalPunchout.FDisplaySplash(t, "center");
 		}
-		else if (PolitalPunchout.GAMESTATE == game::EGameState::play)
+		else if (PolitalPunchout.GAMESTATE == "play")
 		{
 			Character.FgetMovement();
 			Projectile.PROJECTILETEXTURE = t;
 			Projectile.FaddProjectile();
 		}
-		else if (PolitalPunchout.GAMESTATE == game::EGameState::loading)
+		else if (PolitalPunchout.GAMESTATE == "loading")
 		{
 
 		}
-		PolitalPunchout.FdrawCharacter();
+
 		PolitalPunchout.Fupdate();
 	} 
 	

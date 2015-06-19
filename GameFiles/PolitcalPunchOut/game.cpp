@@ -1,12 +1,9 @@
 #include "stdafx.h"
-#include "game.h"
-#include "player.h"
-#include "SFML/Graphics.hpp"
-#include <iostream>
-#include <windows.h>
+#include "linker.h"
 
 game::game()
 {
+	this->GAMESTATELIST.push_back("splash");
 	this->FsetGameState("splash");
 }
 game::~game()
@@ -49,7 +46,7 @@ void game::FcheckEventState()
 		if (event.type == sf::Event::Closed)
 		{
 
-			GAMESTATE = EGameState::close;
+			GAMESTATE = "close";
 			this->GAMESCREEN.close();
 		}
 	}
@@ -57,38 +54,11 @@ void game::FcheckEventState()
 }
 void game::FsetGameState(std::string state)
 {
-	if (state == "pause")
-	{
-		this->GAMESTATE = game::EGameState::paused;
-	}
-	else if (state == "load")
-	{
-		this->GAMESTATE = game::EGameState::loading;
-	}
-	else if (state == "menu")
-	{
-		this->GAMESTATE = game::EGameState::menu;
-	}
-	else if (state == "play")
-	{
-		this->GAMESTATE = game::EGameState::play;
-	}
-	else if (state == "lose")
-	{
-		this->GAMESTATE = game::EGameState::lose;
-	}
-	else if (state == "win")
-	{
-		this->GAMESTATE = game::EGameState::win;
-	}
-	else if (state == "splash")
-	{
-		this->GAMESTATE = game::EGameState::splash;
-	}
-	else if (state == "close")
-	{
-		this->GAMESTATE = game::EGameState::close;
-	}
+	this->GAMESTATE = state;
+}
+void game::FaddGameState(std::string state)
+{
+	this->GAMESTATELIST.push_back(state);
 }
 void game::FDisplaySplash(sf::Texture splashDisplay, std::string location)
 {
@@ -100,27 +70,15 @@ void game::FDisplaySplash(sf::Texture splashDisplay, std::string location)
 	}
 	this->GAMESCREEN.draw(this->BACKGROUND);
 }
-void game::Fupdate()
-{
-	this->GAMESCREEN.display();
-}
 void game::FClear()
 {
 	this->GAMESCREEN.clear();
 }
-void game::FdrawCharacter()
+void game::Fupdate()
 {
-	this->GAMESCREEN.draw(player::PLAYER);
+	this->GAMESCREEN.display();
 }
-void game::FdrawProjectile()
+void game::Fdraw()
 {
-	for (this->PROJECTILELOCATION = this->PROJECTILELIST.begin(); this->PROJECTILELOCATION != this->PROJECTILELIST.end(); this->PROJECTILELOCATION++)
-	{
-		this->GAMESCREEN.draw(*this->PROJECTILELOCATION);
 
-	}
-}
-void game::FdrawMenu()
-{
-	this->GAMESCREEN.draw(menu::LOADINGBAR);
 }

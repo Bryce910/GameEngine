@@ -1,6 +1,5 @@
-#pragma once
-
-#include "SFML/Graphics.hpp"
+#include "stdafx.h"
+#include "linker.h"
 
 class player
 {
@@ -12,10 +11,13 @@ public:
 	enum PlayerAction {walk, run, idle, jump};
 	enum PlayerMovement PLAYERDIRECTION;
 	enum PlayerAction PLAYERACTION;
-	float XSPEED, YSPEED, HEALTH;
+	float XSPEED, YSPEED, HEALTH, ANGLE;
+	sf::Vector2f PLAYERCENTER;
 	void FgetMovement();
+	void FgetCenter();
 	void FmovePlayer();
 	void FgetHealth();
 	void FsetHealth();
+	void FgetAngle();
 };
 
