@@ -3,13 +3,79 @@
 
 menu::menu()
 {
-}
 
+}
 
 menu::~menu()
 {
 }
 
+void menu::f_addMenuItem(sf::RenderWindow &app,sf::Texture &texture, std::string menuType, std::string location, sf::Vector2f position)
+{
+	/* Setting texture and sprite */
+	m_texture = texture;
+	m_item.setTexture(m_texture);
+	f_setMenuPosition(location, position, app);
+	/* Add item */
+	m_menuItem.push_back(m_item);
+	/* Setting data into the menulist */
+	m_menuList.resize(m_menuItem.size());
+	m_menuList[m_menuItem.size()-1].push_back(menuType);
+	m_menuList[m_menuItem.size()-1].push_back(location);
+	
+}
+void menu::f_setMenuPosition(std::string location, sf::Vector2f position, sf::RenderWindow &app)
+{
+
+	m_menuItemLocation.x = position.x;
+	m_menuItemLocation.y = position.y;
+
+	m_menuItemSize.x = m_item.getGlobalBounds().width;
+	m_menuItemSize.y = m_item.getGlobalBounds().height;
+
+	if (location == "")
+	{
+		m_item.setPosition(m_menuItemLocation.x, m_menuItemLocation.y);
+	}
+	else if (location == "Bottom Left")
+	{
+		m_item.setPosition(0, app.getSize().y - m_menuItemSize.y);
+	}
+	else if (location == "Middle Left")
+	{
+		m_item.setPosition(0, app.getSize().y - (m_menuItemSize.y / 2) / 2);
+	}
+	else if (location == "Top Left")
+	{
+		m_item.setPosition(0, 0);
+	}
+	else if (location == "Top Right")
+	{
+		m_item.setPosition(app.getSize().x - (m_menuItemSize.x), 0);
+	}
+	else if (location == "Middle Right")
+	{
+		m_item.setPosition(app.getSize().x - (m_menuItemSize.x), app.getSize().y - (m_menuItemSize.y / 2) / 2);
+	}
+	else if (location == "Bottom Right")
+	{
+		m_item.setPosition(app.getSize().x - (m_menuItemSize.x), app.getSize().y - (m_menuItemSize.y));
+	}
+	else if (location == "Center Top")
+	{
+		m_item.setPosition(app.getSize().x - (m_menuItemSize.x / 2) / 2, 0);
+	}
+	else if (location == "Center Middle")
+	{
+		m_item.setPosition(app.getSize().x - (m_menuItemSize.x / 2) / 2, app.getSize().y - (m_menuItemSize.y / 2) / 2);
+	}
+	else if (location == "Center Bottom")
+	{
+		m_item.setPosition(app.getSize().x - (m_menuItemSize.x / 2) / 2, app.getSize().y - (m_menuItemSize.y));
+	}
+
+}
+/*
 void menu::FloadingMenu(sf::Sprite &loadingBarSprite, float frameLength, float loadingBarx, float loadingBary, float frameX, float frameY, std::string direction)
 {
 	this->LOADINGBAR = loadingBarSprite;
@@ -101,7 +167,7 @@ void menu::FloseMenu()
 		menuContainter++;
 	}
 }
-void menu::FaddMenuItem(sf::Texture &texture, float locationX, float locationY, std::string simpleLocation, std::string menuType)
+void menu::FaddMenuItem(sf::Texture &texture, float locationX, float locationY, std::string simpleLocation, std::string menuType, std::string action, std::string function)
 {
 	this->MENUITEM.setTexture(texture);
 	this->MENUITEMLOCATION.x = locationX;
@@ -151,4 +217,15 @@ void menu::FaddMenuItem(sf::Texture &texture, float locationX, float locationY, 
 	}
 	this->MENUITEMLIST.push_back(this->MENUITEM);
 	this->MENUITEMCONTAINERLIST.push_back(menuType);
+	this->MENUITEMACTION.push_back(action);
+	this->MENUITEMFUNCTION.push_back(function);
 }
+void menu::FaddInputItem(std::string type, std::string location, float minValue, float maxValue, float size, sf::Color boxColor)
+{
+
+	if (type == "button")
+	{
+		input->FsetButton();
+	}
+}
+*/

@@ -1,16 +1,55 @@
-﻿Build started 6/11/2015 1:46:15 AM.
-     1>Project "C:\Users\Bryce\documents\visual studio 2013\Projects\PolitcalPunchOut\PolitcalPunchOut\PolitcalPunchOut.vcxproj" on node 2 (Build target(s)).
+﻿Build started 6/25/2015 8:11:45 PM.
+     1>Project "C:\Users\Bryce\Documents\GitHub\GameEngine\GameFiles\PolitcalPunchOut\PolitcalPunchOut.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\SFML-2.3\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\PolitcalPunchOut.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
-         stdafx.cpp
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\SFML-2.3\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\PolitcalPunchOut.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt PolitcalPunchOut.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\SFML-2.3\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\PolitcalPunchOut.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt PolitcalPunchOut.cpp draw.cpp game.cpp inputs.cpp level.cpp menu.cpp network.cpp player.cpp
+         player.cpp
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\player.cpp(1): error C2859: c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\debug\vc120.idb is not the idb file that was used when this precompiled header was created, recreate the precompiled header.
+         network.cpp
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\network.cpp(1): error C2859: c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\debug\vc120.idb is not the idb file that was used when this precompiled header was created, recreate the precompiled header.
+         menu.cpp
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\menu.cpp(1): error C2859: c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\debug\vc120.idb is not the idb file that was used when this precompiled header was created, recreate the precompiled header.
+         level.cpp
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\level.cpp(1): error C2859: c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\debug\vc120.idb is not the idb file that was used when this precompiled header was created, recreate the precompiled header.
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\level.h(9): error C2039: 'vector' : is not a member of 'std'
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\level.h(9): error C2143: syntax error : missing ';' before '<'
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\level.h(9): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\level.h(9): error C2238: unexpected token(s) preceding ';'
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\level.h(11): error C2039: 'vector' : is not a member of 'std'
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\level.h(11): error C2143: syntax error : missing ';' before '<'
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\level.h(11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\level.h(11): error C2653: 'sf' : is not a class or namespace name
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\level.h(11): error C2238: unexpected token(s) preceding ';'
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\level.h(12): error C2653: 'sf' : is not a class or namespace name
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\level.h(12): error C2146: syntax error : missing ';' before identifier 'LEVELOBJECT'
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\level.h(12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\level.h(13): error C2653: 'sf' : is not a class or namespace name
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\level.h(13): error C2146: syntax error : missing ';' before identifier 'startingPosition'
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\level.h(13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\level.h(14): error C2039: 'vector' : is not a member of 'std'
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\level.h(14): error C2143: syntax error : missing ';' before '<'
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\level.h(14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\level.h(14): error C2039: 'string' : is not a member of 'std'
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\level.h(14): error C2238: unexpected token(s) preceding ';'
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\level.h(15): error C2039: 'string' : is not a member of 'std'
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\level.h(15): error C2146: syntax error : missing ';' before identifier 'LEVELOBJECTTYPE'
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\level.h(15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\level.h(16): error C2039: 'vector' : is not a member of 'std'
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\level.h(16): error C2143: syntax error : missing ';' before '<'
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\level.h(16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\level.h(16): error C2238: unexpected token(s) preceding ';'
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\level.h(10): error C2536: 'level::level::LEVEL' : cannot specify explicit initializer for arrays
+                 c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\level.h(10) : see declaration of 'level::LEVEL'
+         inputs.cpp
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\inputs.cpp(1): error C2859: c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\debug\vc120.idb is not the idb file that was used when this precompiled header was created, recreate the precompiled header.
+         game.cpp
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\game.cpp(1): error C2859: c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\debug\vc120.idb is not the idb file that was used when this precompiled header was created, recreate the precompiled header.
+         draw.cpp
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\draw.cpp(1): error C2859: c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\debug\vc120.idb is not the idb file that was used when this precompiled header was created, recreate the precompiled header.
          PolitcalPunchOut.cpp
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Bryce\documents\visual studio 2013\Projects\PolitcalPunchOut\Debug\PolitcalPunchOut.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\SFML-2.3\lib" "sfml-graphics-d.lib" "sfml-window-d.lib" "sfml-system-d.lib" "sfml-audio-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Bryce\documents\visual studio 2013\Projects\PolitcalPunchOut\Debug\PolitcalPunchOut.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Bryce\documents\visual studio 2013\Projects\PolitcalPunchOut\Debug\PolitcalPunchOut.lib" /MACHINE:X86 Debug\PolitcalPunchOut.obj
-         Debug\stdafx.obj
-     1>sfml-graphics-d.lib(sfml-graphics-d-2.dll) : fatal error LNK1112: module machine type 'x64' conflicts with target machine type 'X86'
-     1>Done Building Project "C:\Users\Bryce\documents\visual studio 2013\Projects\PolitcalPunchOut\PolitcalPunchOut\PolitcalPunchOut.vcxproj" (Build target(s)) -- FAILED.
+     1>c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\politcalpunchout.cpp(3): error C2859: c:\users\bryce\documents\github\gameengine\gamefiles\politcalpunchout\debug\vc120.idb is not the idb file that was used when this precompiled header was created, recreate the precompiled header.
+         Generating Code...
+     1>Done Building Project "C:\Users\Bryce\Documents\GitHub\GameEngine\GameFiles\PolitcalPunchOut\PolitcalPunchOut.vcxproj" (Build target(s)) -- FAILED.
 
 Build FAILED.
 
-Time Elapsed 00:00:01.33
+Time Elapsed 00:00:04.77

@@ -153,15 +153,20 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="chat.h" />
+    <ClInclude Include="controller.h" />
     <ClInclude Include="draw.h" />
     <ClInclude Include="game.h" />
+    <ClInclude Include="inputs.h" />
     <ClInclude Include="inventory.h" />
     <ClInclude Include="item.h" />
+    <ClInclude Include="labels.h" />
+    <ClInclude Include="level.h" />
     <ClInclude Include="lighting.h" />
     <ClInclude Include="linker.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="network.h" />
     <ClInclude Include="objects.h" />
+    <ClInclude Include="particles.h" />
     <ClInclude Include="physic.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="projectile.h" />
@@ -171,14 +176,19 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="chat.cpp" />
+    <ClCompile Include="controller.cpp" />
     <ClCompile Include="draw.cpp" />
     <ClCompile Include="game.cpp" />
+    <ClCompile Include="inputs.cpp" />
     <ClCompile Include="inventory.cpp" />
     <ClCompile Include="item.cpp" />
+    <ClCompile Include="labels.cpp" />
+    <ClCompile Include="level.cpp" />
     <ClCompile Include="lighting.cpp" />
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="network.cpp" />
     <ClCompile Include="objects.cpp" />
+    <ClCompile Include="particles.cpp" />
     <ClCompile Include="physic.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="PolitcalPunchOut.cpp" />

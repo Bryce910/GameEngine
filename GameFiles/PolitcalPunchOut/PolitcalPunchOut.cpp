@@ -5,35 +5,29 @@
 
 int main()
 {
-	game PolitalPunchout;
-	PolitalPunchout.FsetFrameRate(60);
-	PolitalPunchout.FsetGameTitle("Politcal PunchOut");
-	PolitalPunchout.FsetGameSize(800, 600);
-	PolitalPunchout.FhideTerminal();
-	PolitalPunchout.FloadWindow();
+	rad::game* c_screen = new rad::game("Demo Game", 800, 600, 60, true, false);
+	/* Don't need below */
+	/*
+		c_screen->FsetFrameRate(60);
+		c_screen->FsetGameTitle("Politcal PunchOut");
+		c_screen->FsetGameSize(800, 600);
+		c_screen->FhideTerminal();
+		c_screen->FloadWindow();
+	*/
 	sf::Texture t;
-	player Character;
-	projectile Projectile;
-	while (PolitalPunchout.GAMESTATE != "close")
+	t.loadFromFile("images/splash.jpg");
+	c_screen->f_addMenuItem(c_screen->m_gameScreen, t, "splash", "Center Middle", sf::Vector2f(0, 0));
+	while (c_screen->m_gamestate != "close")
 	{
-		PolitalPunchout.FcheckEventState();
-		PolitalPunchout.FClear();
-		if (PolitalPunchout.GAMESTATE == "splash")
+		c_screen->f_checkEventState();
+		if (c_screen->f_getKey(sf::Keyboard::P))
 		{
-			PolitalPunchout.FDisplaySplash(t, "center");
+			// do a bunch
+			c_screen->m_gamestate = "play";
 		}
-		else if (PolitalPunchout.GAMESTATE == "play")
-		{
-			Character.FgetMovement();
-			Projectile.PROJECTILETEXTURE = t;
-			Projectile.FaddProjectile();
-		}
-		else if (PolitalPunchout.GAMESTATE == "loading")
-		{
-
-		}
-
-		PolitalPunchout.Fupdate();
+		c_screen->f_Clear();
+		c_screen->f_draw();
+		c_screen->f_update();
 	} 
 	
 	

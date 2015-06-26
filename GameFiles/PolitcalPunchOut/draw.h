@@ -1,7 +1,7 @@
 #pragma once
 #include "linker.h"
 
-class draw: public player, public menu, public projectile
+class draw /*: public player, public menu, public projectile */
 {
 public:
 	draw();

@@ -1,37 +1,44 @@
 #include "stdafx.h"
 #include "linker.h"
-class game
+namespace rad
 {
-public:
-	game();
-	~game();
-	
-	std::vector<std::string> GAMESTATELIST;
-	std::string GAMESTATE;
-	enum EGameType { standard, sidescroller, verticalscroller, platformer, shootemup};
-	enum EGameState GAMETYPE;
-	int MAXFRAMERATE;
-	std::string GAMETITLE;
-	int FsetFrameRate(int maxframerate);
-	bool FsetGameTitle(std::string gameTitle);
-	sf::RenderWindow GAMESCREEN;
-	unsigned int GAMESIZEX, GAMESIZEY;
-	sf::Texture SPLASHTEXTURE;
-	sf::Sprite BACKGROUND;
-	void FloadWindow();
-	void Fupdate();
-	void FsetGameSize(unsigned int sizeX, unsigned int sizeY);
-	void FcheckEventState();
-	void FsetGameState(std::string state);
-	void FDisplaySplash(sf::Texture splashDisplay, std::string location);
-	void FsetIcon(int x, int y,sf::Image &icon);
-	void FsetOverallVolume();
-	void FsetSingelVolume();
-	
-	void FClear();
+	class game: public menu, public controller
+	{
+	public:
+		game();
+		game(std::string title, unsigned int GameSizeX, unsigned int GameSizeY, int frameRate, bool hideterminal, bool fullscreen);
+		~game();
+		/* Public Variables */
+		std::vector<std::string> m_gamestatelist;
+		std::string m_gamestate;
+		enum EGameType { standard, sidescroller, verticalscroller, platformer, shootemup, faller };
+		enum EGameState m_gametype;
+		int m_maxFrameRate;
+		std::string m_gameTitle;
+		int FsetFrameRate(int maxframerate);
+		bool FsetGameTitle(std::string gameTitle);
+		sf::RenderWindow m_gameScreen;
+		sf::Vector2i m_screenSize;
+		sf::Texture m_splashTexture;
+		sf::Sprite m_background;
+		bool m_fullScreen = false;
+		/* Public Functions */
+		void f_loadWindow();
+		void f_update();
+		void f_setGameSize(unsigned int sizeX, unsigned int sizeY);
+		void f_checkEventState();
+		void f_setGameState(std::string state);
+		void f_DisplaySplash(sf::Texture splashDisplay, std::string location);
+		void f_setIcon(int x, int y, sf::Image &icon);
+		void f_setOverallVolume();
+		void f_setSingelVolume();
+		void f_setFullScreen();
+		void f_Clear();
+		void f_hideTerminal();
+		void f_addGameState(std::string state);
+		void f_draw();
+		void f_screenShake(float x, float y, std::string intensity);
+		void f_screenShake(float x, float y);
+	};
 
-	void FhideTerminal();
-	void FaddGameState(std::string state);
-	void Fdraw();
-};
-
+}
