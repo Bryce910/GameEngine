@@ -1,8 +1,8 @@
 #include "stdafx.h"
 #include "linker.h"
-namespace rad
+namespace simplicity
 {
-	class game: public menu, public controller
+	class game : public menu, public controller, public sf::Texture
 	{
 	public:
 		game();
@@ -39,6 +39,7 @@ namespace rad
 		void f_draw();
 		void f_screenShake(float x, float y, std::string intensity);
 		void f_screenShake(float x, float y);
+		void f_loadTexture(sf::Texture &texture, std::string path);
 	};
 
 }

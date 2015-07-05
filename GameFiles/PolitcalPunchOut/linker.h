@@ -6,8 +6,11 @@
 #include <vector>
 #include "menu.h"
 #include "controller.h"
+/*
+#include "player.h"
+*/
+#include "audio.h"
 #include "game.h"
-
 /*
 #include "inputs.h" */
 /*

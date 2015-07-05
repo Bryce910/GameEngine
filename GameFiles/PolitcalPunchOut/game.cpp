@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "linker.h"
 
-using namespace rad;
+using namespace simplicity;
 
 	game::game()
 	{
@@ -114,14 +114,24 @@ using namespace rad;
 	void game::f_draw()
 	{
 		int frame = 0;
-		for (std::vector<sf::Sprite>::iterator itr = m_menuItem.begin(); itr != m_menuItem.end(); itr++)
+		for (std::vector<std::vector<sf::Sprite>>::iterator itr = m_menuItem.begin(); itr != m_menuItem.end(); itr++)
 		{
-			if (m_menuList[frame][0] == m_gamestate)
+			if ((m_menuList[frame][0].compare(m_gamestate)) == 0)
 			{
 				//draw this item
-				m_gameScreen.draw(*itr);
+				if (!m_menuItem[frame][0].getGlobalBounds().contains(float(sf::Mouse::getPosition(m_gameScreen).x), float(sf::Mouse::getPosition(m_gameScreen).y)))
+				{
+					m_gameScreen.draw(m_menuItem[frame][0]);
+				}
+				else
+				{
+					m_gameScreen.draw(m_menuItem[frame][1]);
+				}
 			}
-			std::cout << m_menuList[frame][0] << std::endl;
-			frame++;
+			frame++; 
 		}
+	}
+	void game::f_loadTexture(sf::Texture &texture, std::string path)
+	{
+		texture.loadFromFile(path);
 	}
