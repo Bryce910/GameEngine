@@ -1,15 +1,14 @@
 #include "stdafx.h"
 #include "linker.h"
-#include "player.h"
-using namespace simplicity;
-
 	player::player()
 	{
 //		this->FgetCenter();
+		m_health = 100;
 	}
 
 	player::~player()
 	{
+
 	}
 	/*
 	void player::FgetMovement()
@@ -51,3 +50,28 @@ using namespace simplicity;
 	this->ANGLE = this->PLAYER.getRotation();
 	}
 	*/
+
+	void player::f_setTexture(sf::Texture &texture, sf::Vector2f size)
+	{
+		m_player.setTexture(texture);
+		if (size.x == 0 || size.y == 0)
+		{
+			m_player.setTextureRect(sf::IntRect(0,0,int(m_player.getGlobalBounds().width), int( m_player.getGlobalBounds().height)));
+		}
+		else
+		{
+			m_player.setTextureRect(sf::IntRect(0, 0, int( size.x),int( size.y)));
+		}
+		
+	}
+
+	void f_animationTexture(sf::Texture &texture, std::string type, int maxFrames, float speed)
+	{
+
+	}
+
+	void player::f_setPlayerGameState(std::string status)
+	{
+		m_status = status;
+	}
+	 

@@ -37,6 +37,7 @@ namespace simplicity
 		void f_hideTerminal();
 		void f_addGameState(std::string state);
 		void f_draw();
+		void f_draw(player* c_player);
 		void f_screenShake(float x, float y, std::string intensity);
 		void f_screenShake(float x, float y);
 		void f_loadTexture(sf::Texture &texture, std::string path);

@@ -7,15 +7,18 @@ public:
 	menu();
 	~menu();
 	//std::vector<sf::Sprite> m_menuItem;
-	int m_menuCounter = 0;
 	std::vector<std::vector<sf::Sprite>> m_menuItem;
 	std::vector<std::vector<std::string>> m_menuList;
-
+	bool m_clickEvent = false;
 	sf::Sprite m_item;
 	sf::Vector2f m_menuItemLocation, m_menuItemSize;
+	std::string m_eventVariable;
 	void f_addMenuItem(sf::RenderWindow &app,sf::Texture &texture, std::string menuType, std::string location, sf::Vector2f position);
 	void f_addMenuItem(sf::RenderWindow &app, sf::Texture &texture, sf::Texture &hoverTexture, std::string menuType, std::string location, sf::Vector2f position);
 	void f_addMenuItem(sf::RenderWindow &app, sf::Texture &texture, sf::Texture &hoverTexture, std::string menuType, std::string location, sf::Vector2f position, float scaleX, float scaleY);
+	void f_addMenuItem(sf::RenderWindow &app, sf::Texture &texture, sf::Texture &hoverTexture, std::string menuType, std::string newType, std::string location, sf::Vector2f position, float scaleX, float scaleY);
+	void f_addMenuItem(sf::RenderWindow &app, sf::Texture &texture, sf::Texture &hoverTexture, std::string menuType, std::string newType, std::string location, sf::Vector2f position, float scaleX, float scaleY, std::string varible);
+
 	void f_setMenuPosition(std::string location, sf::Vector2f position, sf::RenderWindow &app);
 	/*void FloadingMenu(sf::Sprite &loadingBarSprite, float frameLength, float loadingBarx, float loadingBary, float frameX, float frameY, std::string direction);
 	void FanimationBar();

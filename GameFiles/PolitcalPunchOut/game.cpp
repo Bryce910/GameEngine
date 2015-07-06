@@ -81,6 +81,10 @@ using namespace simplicity;
 				m_gamestate = "close";
 				m_gameScreen.close();
 			}
+			if (event.type == sf::Event::MouseButtonReleased)
+			{
+				m_clickEvent = true;
+			}
 		}
 
 	}
@@ -114,22 +118,49 @@ using namespace simplicity;
 	void game::f_draw()
 	{
 		int frame = 0;
+		/* Loop through menu*/
 		for (std::vector<std::vector<sf::Sprite>>::iterator itr = m_menuItem.begin(); itr != m_menuItem.end(); itr++)
 		{
+			
 			if ((m_menuList[frame][0].compare(m_gamestate)) == 0)
 			{
-				//draw this item
-				if (!m_menuItem[frame][0].getGlobalBounds().contains(float(sf::Mouse::getPosition(m_gameScreen).x), float(sf::Mouse::getPosition(m_gameScreen).y)))
+				if (m_menuList[frame][2] == "background")
 				{
 					m_gameScreen.draw(m_menuItem[frame][0]);
 				}
 				else
 				{
-					m_gameScreen.draw(m_menuItem[frame][1]);
+					//draw this item
+					if (!m_menuItem[frame][0].getGlobalBounds().contains(float(sf::Mouse::getPosition(m_gameScreen).x), float(sf::Mouse::getPosition(m_gameScreen).y)))
+					{
+						m_gameScreen.draw(m_menuItem[frame][0]);
+
+					}
+					else
+					{
+						m_gameScreen.draw(m_menuItem[frame][1]);
+						if (m_clickEvent)
+						{
+							m_gamestate = m_menuList[frame][3];
+							m_eventVariable = m_menuList[frame][4];
+							std::cout << m_gamestate;
+						}
+					}
+
 				}
 			}
+			
 			frame++; 
 		}
+		m_clickEvent = false;
+	}
+	void game::f_draw(player* c_player)
+	{
+		if (c_player->m_status == m_gamestate)
+		{
+			m_gameScreen.draw(c_player->m_player);
+		}
+		
 	}
 	void game::f_loadTexture(sf::Texture &texture, std::string path)
 	{

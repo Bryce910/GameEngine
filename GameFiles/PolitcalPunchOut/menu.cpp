@@ -50,16 +50,17 @@ void menu::f_addMenuItem(sf::RenderWindow &app, sf::Texture &texture, sf::Textur
 void menu::f_addMenuItem(sf::RenderWindow &app, sf::Texture &texture, sf::Texture &hoverTexture, std::string menuType, std::string location, sf::Vector2f position, float scaleX, float scaleY)
 {
 	/* Setting texture and sprite */
-	++m_menuCounter;
 	m_item.setTexture(texture);
+	m_item.setTextureRect(sf::IntRect(0, 0, hoverTexture.getSize().x, hoverTexture.getSize().y));
 	std::cout << m_item.getTexture() << std::endl;
 	m_item.setScale(scaleX, scaleY);
 	f_setMenuPosition(location, position, app);
 	m_menuItem.resize(m_menuItem.size() + 1);
 	/* Add item */
 	m_menuItem.at(m_menuItem.size() - 1).push_back(m_item);
-	std::cout << m_menuCounter << std::endl;
 	m_item.setTexture(hoverTexture);
+	m_item.setTextureRect(sf::IntRect(0,0,hoverTexture.getSize().x, hoverTexture.getSize().y));
+	m_item.setScale(1.0f, 1.0f);
 	m_item.setScale(scaleX, scaleY);
 	m_menuItem[m_menuItem.size() - 1].push_back(m_item);
 	std::cout << m_menuItem.size() << std::endl;
@@ -68,7 +69,66 @@ void menu::f_addMenuItem(sf::RenderWindow &app, sf::Texture &texture, sf::Textur
 	m_menuList.resize(m_menuItem.size());
 	m_menuList[m_menuItem.size() - 1].push_back(menuType);
 	m_menuList[m_menuItem.size() - 1].push_back(location);
+	m_menuList[m_menuItem.size() - 1].push_back("background");
+	m_menuList[m_menuItem.size() - 1].push_back("none");
+	m_menuList[m_menuItem.size() - 1].push_back("none");
+
 }
+void menu::f_addMenuItem(sf::RenderWindow &app, sf::Texture &texture, sf::Texture &hoverTexture, std::string menuType, std::string newMenu, std::string location, sf::Vector2f position, float scaleX, float scaleY)
+{
+	/* Setting texture and sprite */
+	m_item.setTexture(texture);
+	m_item.setTextureRect(sf::IntRect(0, 0, hoverTexture.getSize().x, hoverTexture.getSize().y));
+	std::cout << m_item.getTexture() << std::endl;
+	m_item.setScale(scaleX, scaleY);
+	f_setMenuPosition(location, position, app);
+	m_menuItem.resize(m_menuItem.size() + 1);
+	/* Add item */
+	m_menuItem.at(m_menuItem.size() - 1).push_back(m_item);
+	m_item.setTexture(hoverTexture);
+	m_item.setTextureRect(sf::IntRect(0, 0, hoverTexture.getSize().x, hoverTexture.getSize().y));
+	m_item.setScale(1.0f, 1.0f);
+	m_item.setScale(scaleX, scaleY);
+	m_menuItem[m_menuItem.size() - 1].push_back(m_item);
+	std::cout << m_menuItem.size() << std::endl;
+	/* Setting data into the menulist */
+
+	m_menuList.resize(m_menuItem.size());
+	m_menuList[m_menuItem.size() - 1].push_back(menuType);
+	m_menuList[m_menuItem.size() - 1].push_back(location);
+	m_menuList[m_menuItem.size() - 1].push_back("variable");
+	m_menuList[m_menuItem.size() - 1].push_back(newMenu);
+	m_menuList[m_menuItem.size() - 1].push_back("none");
+}
+
+void menu::f_addMenuItem(sf::RenderWindow &app, sf::Texture &texture, sf::Texture &hoverTexture, std::string menuType, std::string newMenu, std::string location, sf::Vector2f position, float scaleX, float scaleY, std::string varaible)
+{
+	/* Setting texture and sprite */
+	m_item.setTexture(texture);
+	m_item.setTextureRect(sf::IntRect(0, 0, hoverTexture.getSize().x, hoverTexture.getSize().y));
+	std::cout << m_item.getTexture() << std::endl;
+	m_item.setScale(scaleX, scaleY);
+	f_setMenuPosition(location, position, app);
+	m_menuItem.resize(m_menuItem.size() + 1);
+	/* Add item */
+	m_menuItem.at(m_menuItem.size() - 1).push_back(m_item);
+	m_item.setTexture(hoverTexture);
+	m_item.setTextureRect(sf::IntRect(0, 0, hoverTexture.getSize().x, hoverTexture.getSize().y));
+	m_item.setScale(1.0f, 1.0f);
+	m_item.setScale(scaleX, scaleY);
+	m_menuItem[m_menuItem.size() - 1].push_back(m_item);
+	std::cout << m_menuItem.size() << std::endl;
+	/* Setting data into the menulist */
+
+	m_menuList.resize(m_menuItem.size());
+	m_menuList[m_menuItem.size() - 1].push_back(menuType);
+	m_menuList[m_menuItem.size() - 1].push_back(location);
+	m_menuList[m_menuItem.size() - 1].push_back("item");
+	m_menuList[m_menuItem.size() - 1].push_back(newMenu);
+	m_menuList[m_menuItem.size() - 1].push_back(varaible);
+}
+
+
 
 void menu::f_setMenuPosition(std::string location, sf::Vector2f position, sf::RenderWindow &app)
 {
@@ -118,6 +178,10 @@ void menu::f_setMenuPosition(std::string location, sf::Vector2f position, sf::Re
 	else if (location == "Center Bottom")
 	{
 		m_item.setPosition((app.getSize().x / 2 )- (m_menuItemSize.x / 2), app.getSize().y - (m_menuItemSize.y));
+	}
+	if (m_menuItemLocation.x != 0 || m_menuItemLocation.y != 0)
+	{
+		m_item.setPosition(m_item.getPosition().x + m_menuItemLocation.x, m_item.getPosition().y + m_menuItemLocation.y);
 	}
 
 }
