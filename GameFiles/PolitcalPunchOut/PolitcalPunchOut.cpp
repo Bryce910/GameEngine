@@ -59,7 +59,6 @@ int main()
 		if (c_screen->m_eventVariable == "rep")
 		{
  			c_player->f_setTexture(playerTextureRep, { 0, 0 });
-
 		}
 		else if (c_screen->m_eventVariable == "dem")
 		{

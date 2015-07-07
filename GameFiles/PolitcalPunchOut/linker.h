@@ -3,6 +3,7 @@
 #include <iostream>
 #include "SFML/Graphics.hpp"
 #include <windows.h>
+#include "string.h"
 #include <vector>
 #include "menu.h"
 #include "controller.h"

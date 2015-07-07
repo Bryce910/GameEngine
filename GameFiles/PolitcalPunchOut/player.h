@@ -7,13 +7,17 @@ class player
 		player();
 		~player();
 		sf::Sprite m_player;
-		enum PlayerMovement { up, down, left, right };
-		enum PlayerAction { walk, run, idle, jump };
-		enum PlayerMovement e_playerDirection;
-		enum PlayerAction e_playerAction;
+		std::string m_activeAnimation;
+		std::string  m_playerAction;
 		float m_xSpeed, m_ySpeed, m_health, m_angle;
 		std::string m_status;
 		sf::Vector2f v_playerCenter;
+		std::vector<sf::Texture>v_animationList;
+		std::vector<sf::Clock>v_animationClock;
+		sf::Clock c_aniClock;
+		std::vector<std::vector<std::string>>v_animationRules;
+		std::vector<bool>v_animationReverseRules;
+		std::vector<int>v_animationDimensions;
 		void FgetMovement();
 		void FgetCenter();
 		void FmovePlayer();
@@ -22,6 +26,7 @@ class player
 		void FgetAngle();
 		void f_setPlayerGameState(std::string status);
 		void f_setTexture(sf::Texture &texture, sf::Vector2f size);
-		void f_animationTexture(sf::Texture &texture, std::string type, int maxFrames, float speed);
+		void f_animationTexture(sf::Texture &texture, int frameSizeX,int frameSizeY, std::string type, int maxFrames, std::string direction,  bool reverse, int speed);
+		void f_animate();
 	};
 
