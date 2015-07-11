@@ -20,6 +20,7 @@ int main()
 	/*  New Player */
 	player* c_player = new player;
 	c_player->f_setPlayerGameState("game");
+	c_player->m_player.setPosition(0, 300);
 	/* Set splashmenu texture */
 	c_screen->f_loadTexture(splashTexture, resourcePath + "splash\\splash.png");
 	/* Set Main Menu Textures */
@@ -50,25 +51,37 @@ int main()
 	c_screen->f_addMenuItem(c_screen->m_gameScreen, partyMenuBackgroundTexture, partyMenuBackgroundTexture, "party", "Center Middle", sf::Vector2f(0, 0), 1.f, 1.f);
 	c_screen->f_addMenuItem(c_screen->m_gameScreen, partyMenuDemTexture, partyMenuDemTexture, "party", "game", "Center Middle", sf::Vector2f(-125, 0), 0.5f, 0.5f, "dem");
 	c_screen->f_addMenuItem(c_screen->m_gameScreen, partyMenuRepTexture, partyMenuRepTexture, "party", "game", "Center Middle", sf::Vector2f(125, 0), 0.5f, 0.5f, "rep");
+	
+	/* Set Animations / types of animations */
+	c_player->f_animationTexture(playerTextureRep, 150, 600, "idle", 3, "right", true, 150);
+
 	/* While the window is open*/
 	while (c_screen->m_gamestate != "close")
 	{
 		c_screen->f_checkEventState();
 		c_screen->f_Clear();
 		/* Check key being pushed. */
-		if (c_screen->m_eventVariable == "rep")
+		if (!c_screen->teamSet)
 		{
- 			c_player->f_setTexture(playerTextureRep, { 0, 0 });
-		}
-		else if (c_screen->m_eventVariable == "dem")
-		{
-			c_player->f_setTexture(playerTextureDem, { 0, 0 });
+		
+			if (c_screen->m_eventVariable == "rep")
+			{
+				c_player->f_setTexture(playerTextureRep, { 0, 0 }, 1, 1);
+				c_screen->teamSet = true;
+			}
+			else if (c_screen->m_eventVariable == "dem")
+			{
+				c_player->f_setTexture(playerTextureDem, { 0, 0 }, 1, 1);
+				c_screen->teamSet = true;
+			}
 		}
 		if (c_screen->m_gamestate == "game")
 		{
-			if (int i = 0)
+			if (!c_screen->f_checkKey(c_screen->key->W) && !c_screen->f_checkKey(c_screen->key->A) && !c_screen->f_checkKey(c_screen->key->S) && !c_screen->f_checkKey(c_screen->key->D))
 			{
-				//do nothing
+				c_player->m_activeAnimation = "idle";
+				c_player->f_animate();
+				
 			}
 		}
 		if (c_screen->f_checkKey(c_screen->key->Space))

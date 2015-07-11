@@ -16,7 +16,7 @@ class player
 		std::vector<sf::Clock>v_animationClock;
 		sf::Clock c_aniClock;
 		std::vector<std::vector<std::string>>v_animationRules;
-		std::vector<bool>v_animationReverseRules;
+		std::vector<std::vector<bool>>v_animationReverseRules;
 		std::vector<int>v_animationDimensions;
 		void FgetMovement();
 		void FgetCenter();
@@ -25,8 +25,9 @@ class player
 		void FsetHealth();
 		void FgetAngle();
 		void f_setPlayerGameState(std::string status);
-		void f_setTexture(sf::Texture &texture, sf::Vector2f size);
+		void f_setTexture(sf::Texture &texture, sf::Vector2f size, float scaleX, float scaleY);
 		void f_animationTexture(sf::Texture &texture, int frameSizeX,int frameSizeY, std::string type, int maxFrames, std::string direction,  bool reverse, int speed);
 		void f_animate();
+		void f_setPostion(sf::RenderWindow &app);
 	};
 

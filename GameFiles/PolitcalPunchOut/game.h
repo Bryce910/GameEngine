@@ -11,6 +11,7 @@ namespace simplicity
 		/* Public Variables */
 		std::vector<std::string> m_gamestatelist;
 		std::string m_gamestate;
+		bool teamSet = false;
 		enum EGameType { standard, sidescroller, verticalscroller, platformer, shootemup, faller };
 		enum EGameState m_gametype;
 		int m_maxFrameRate;

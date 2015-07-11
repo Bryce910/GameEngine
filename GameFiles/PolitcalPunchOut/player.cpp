@@ -53,9 +53,10 @@
 	}
 	*/
 
-	void player::f_setTexture(sf::Texture &texture, sf::Vector2f size)
+	void player::f_setTexture(sf::Texture &texture, sf::Vector2f size, float scaleX, float scaleY)
 	{
 		m_player.setTexture(texture);
+		m_player.setScale(scaleX, scaleY);
 		if (size.x == 0 || size.y == 0)
 		{
 			m_player.setTextureRect(sf::IntRect(0,0,int(m_player.getGlobalBounds().width), int( m_player.getGlobalBounds().height)));
@@ -81,43 +82,62 @@
 		v_animationRules[v_animationList.size() - 1].push_back(std::to_string(frameSizeY));
 		v_animationRules[v_animationList.size() - 1].push_back(std::to_string(0));
 		v_animationReverseRules.resize(v_animationList.size());
-		v_animationReverseRules.push_back(reverse);
+		v_animationReverseRules[v_animationList.size() - 1].push_back(reverse);
+		v_animationReverseRules[v_animationList.size() - 1].push_back(false);
 	}
+	/* Currently bugged... moving 1 past the max frame */
 	void player::f_animate()
 	{
 		int frame = 0;
 		for (std::vector<sf::Texture>::iterator count = v_animationList.begin(); count != v_animationList.end(); count++)
-		{	if (m_activeAnimation == v_animationRules[frame][0])
+		{	
+			if (m_activeAnimation == v_animationRules[frame][0])
 			{
 				int temp_timeElasped = v_animationClock[frame].getElapsedTime().asMilliseconds();
-				if (temp_timeElasped <= std::stoi(v_animationRules[frame][3]))
+				if (temp_timeElasped >= std::stoi(v_animationRules[frame][3]))
 				{
 					m_player.setTexture(v_animationList[frame]);
-					if (v_animationRules[frame][2] == "right")
+					if (v_animationRules[frame][1] == "right")
 					{
 						m_player.setTextureRect(sf::IntRect(stoi(v_animationRules[frame][4]) * stoi(v_animationRules[frame][6]), 0, stoi(v_animationRules[frame][4]), stoi(v_animationRules[frame][5])));
 					}
-					else if (v_animationRules[frame][2] == "left")
+					else if (v_animationRules[frame][1] == "left")
 					{
 						m_player.setTextureRect(sf::IntRect(0, 0, stoi(v_animationRules[frame][4]), stoi(v_animationRules[frame][5])));
 					}
-					else if (v_animationRules[frame][2] == "down")
+					else if (v_animationRules[frame][1] == "down")
 					{
 						m_player.setTextureRect(sf::IntRect(0, 0, stoi(v_animationRules[frame][4]), stoi(v_animationRules[frame][5])));
 					}
-					else if (v_animationRules[frame][2] == "up")
+					else if (v_animationRules[frame][1] == "up")
 					{
 						m_player.setTextureRect(sf::IntRect(0, 0, stoi(v_animationRules[frame][4]), stoi(v_animationRules[frame][5])));
 					}
-					if (stoi(v_animationRules[frame][6]) <= stoi(v_animationRules[frame][3]))
+					if (stoi(v_animationRules[frame][6]) < stoi(v_animationRules[frame][2]) && !v_animationReverseRules[frame][1])
 					{
-						v_animationRules[frame][6] = stoi(v_animationRules[frame][6]) + 1;
+						v_animationRules[frame][6] = std::to_string(stoi(v_animationRules[frame][6]) + 1);
+					}
+					else if (stoi(v_animationRules[frame][6]) > 0 && v_animationReverseRules[frame][1])
+					{
+						v_animationRules[frame][6] = std::to_string(stoi(v_animationRules[frame][6]) - 1);
 					}
 					else
-					{
-						v_animationRules[frame][6] = "0";
+					{ 
+						if (!v_animationReverseRules[frame][0] && !v_animationReverseRules[frame][1] && stoi(v_animationRules[frame][6]) >= stoi(v_animationRules[frame][2]))
+						{
+							v_animationRules[frame][6] = "0";
+						}
+						else if (v_animationReverseRules[frame][0] && !v_animationReverseRules[frame][1] && stoi(v_animationRules[frame][6]) >= stoi(v_animationRules[frame][2]))
+						{
+							v_animationReverseRules[frame][1] = true;
+						}
+						else if (v_animationReverseRules[frame][1] && stoi(v_animationRules[frame][6]) <= 0)
+						{
+							v_animationReverseRules[frame][1] = false;
+						}
 					}
 					v_animationClock[frame].restart();
+					std::cout << v_animationRules[frame][6] << std::endl;
 				}
 			}
 		frame++;
