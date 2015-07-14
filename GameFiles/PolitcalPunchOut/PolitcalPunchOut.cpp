@@ -21,6 +21,7 @@ int main()
 	player* c_player = new player;
 	c_player->f_setPlayerGameState("game");
 	c_player->m_player.setPosition(0, 300);
+
 	/* Set splashmenu texture */
 	c_screen->f_loadTexture(splashTexture, resourcePath + "splash\\splash.png");
 	/* Set Main Menu Textures */
@@ -54,7 +55,7 @@ int main()
 	
 	/* Set Animations / types of animations */
 	c_player->f_animationTexture(playerTextureRep, 150, 600, "idle", 3, "right", true, 150);
-
+	c_player->m_collisionMesh = true;
 	/* While the window is open*/
 	while (c_screen->m_gamestate != "close")
 	{
@@ -82,6 +83,26 @@ int main()
 				c_player->m_activeAnimation = "idle";
 				c_player->f_animate();
 				
+			}
+			if (c_screen->f_checkKey(c_screen->key->S))
+			{
+				c_player->m_activeAnimation = "down";
+				c_player->f_move("down", 10.f);
+			}
+			if (c_screen->f_checkKey(c_screen->key->W))
+			{
+				c_player->m_activeAnimation = "up";
+				c_player->f_move("up", 10.f);
+			}
+			if (c_screen->f_checkKey(c_screen->key->A))
+			{
+				c_player->m_activeAnimation = "left";
+				c_player->f_move("left", 10.f);
+			}
+			if (c_screen->f_checkKey(c_screen->key->D))
+			{
+				c_player->m_activeAnimation = "right";
+				c_player->f_move("right", 10.f);
 			}
 		}
 		if (c_screen->f_checkKey(c_screen->key->Space))

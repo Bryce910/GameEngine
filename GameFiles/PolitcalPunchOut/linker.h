@@ -7,14 +7,14 @@
 #include <vector>
 #include "menu.h"
 #include "controller.h"
+#include "projectile.h"
 #include "player.h"
 #include "audio.h"
 #include "game.h"
 /*
 #include "inputs.h" */
+
 /*
-#include "player.h"
-#include "projectile.h"
 #include "draw.h"
 #include "level.h"
 #include "labels.h"

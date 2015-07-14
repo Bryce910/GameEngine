@@ -147,3 +147,60 @@
 	{
 		m_status = status;
 	}
+	void player::f_move(std::string direction, float speed)
+	{
+		if (m_collisionMesh)
+		{
+			f_physic();
+		}
+		if (direction == "down")
+		{
+			m_player.move(0,speed);
+		}
+		else if (direction == "up")
+		{
+			m_player.move(0, -speed);
+		}
+		else if (direction == "right")
+		{
+			m_player.move(speed, 0);
+		}
+		else if (direction == "left")
+		{
+			m_player.move(-speed, 0);
+		}
+	}
+	void player::f_move(std::string direction)
+	{
+		if (m_collisionMesh)
+		{
+			f_physic();
+		}
+		if (direction == "down")
+		{
+			m_player.move(0, m_ySpeed);
+		}
+		else if (direction == "up")
+		{
+			m_player.move(0, -m_ySpeed);
+		}
+		else if (direction == "right")
+		{
+			m_player.move(m_xSpeed, 0);
+		}
+		else if (direction == "left")
+		{
+			m_player.move(-m_xSpeed, 0);
+		}
+	}
+	void player::f_physic()
+	{
+		m_playerBox.setSize(sf::Vector2f( m_player.getGlobalBounds().width, m_player.getGlobalBounds().height));
+		m_playerBox.setScale(m_player.getScale().x, m_player.getScale().y);
+		m_playerBox.setOutlineColor(sf::Color::Red);
+		m_playerBox.setFillColor(sf::Color::Transparent);
+		m_playerBox.setOutlineThickness(1.0f);
+		m_playerBox.setPosition(m_player.getPosition().x, m_player.getPosition().y);
+
+		
+	}

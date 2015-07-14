@@ -159,6 +159,7 @@ using namespace simplicity;
 		if (c_player->m_status == m_gamestate)
 		{
 			m_gameScreen.draw(c_player->m_player);
+			m_gameScreen.draw(c_player->m_playerBox);
 		}
 		
 	}
